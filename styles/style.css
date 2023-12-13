@@ -1,5 +1,86 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  color: #353430;
+  font-family: "IBM Plex Mono";
+}
+.header {
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+  min-block-size: 100vb;
+  padding: 20px;
+}
+
+@media(width <= 768px){
+  .header {
+    padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  }
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-template: auto / repeat(3 , min-content);
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.header__theme-menu-button {
+  padding-inline: 13px;
+  padding-block: 2px;
+  background-color: transparent;
+  text-align: center;
+  color: inherit;
+  border: 1px solid transparent;
+  text-transform: lowercase;
+  font-size: 18px;
+  font-family: "IBM Plex Mono";
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.header__theme-menu-button_type_auto {
+  border: 1px solid currentColor;
+}
+
+.header__title {
+color: #FFC2E6;
+text-shadow: 4px 4px 0px #FF0070;
+font-family: "IBM Plex Mono";
+font-style: normal;
+font-weight: 700;
+line-height: 82.5%;
+font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+}
+
+@media(width < 768px){
+  .header__title
+    {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+}
+
+.header__description {
+  inline-size: clamp(364px, -1.0625rem + 49.6094vw, 491px);
+  background-color: #FF8DCB;
+  align-self: start;
+  justify-self: end;
+}
+
+@media(width < 768px){
+  .header__title
+    {
+      inline-size: min(100%, 364px);
+  }
+}
+
+.header__description__text {
+  color: #353430;
+  font-family: "IBM Plex Mono";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23.4px;
 }
