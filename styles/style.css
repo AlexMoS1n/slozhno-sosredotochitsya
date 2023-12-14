@@ -1,17 +1,28 @@
 .page {
-  color: #353430;
-  font-family: "IBM Plex Mono";
+  font-family: var(--main-font-family, sans-serif);
+  font-size: var( --main-font-size);
+  color: var(--main-text-color);
+  font-weight: var(--main-font-weight);
+  background-color: var(--main-background-color);
+  background-image: var(--main-background-image,);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
 }
 .header {
   display: grid;
-  grid-template-rows: repeat(3,1fr);
+  grid-template-rows: 1fr auto 1fr;
   min-block-size: 100vb;
-  padding: 20px;
+  padding: 20px 20px 20px 0;
+  margin-block-end: 60px;
 }
 
 @media(width <= 768px){
   .header {
-    padding: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+    padding: var(--main-padding-formule);
+    margin-block-end: clamp(40px, 1.3073rem + 5.0891vw, 60px);
   }
 }
 
@@ -19,68 +30,215 @@
   position: relative;
 }
 
+.decorated-zone::before, .decorated-zone::after {
+  content: '';
+  display: block;
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.decorated-zone::after {
+  border-block-start: 1px solid var(--theme-text-color);
+  border-inline-end: 1px solid var(--theme-text-color);
+  inset-inline-end: 20px;
+  inset-block-start: 20px;
+}
+
+.decorated-zone::before {
+  border-block-end: 1px solid var(--theme-text-color);
+  border-inline-start: 1px solid var(--theme-text-color);
+  inset-inline-start: 20px;
+  inset-block-end: 20px;
+}
+
+.decorated-zone__rec {
+  display: var(--switch-rec);
+  position: absolute;
+  inset-inline-end: 48px;
+  inset-block-start: 20px;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--theme-text-color);
+  font-weight: inherit;
+  line-height: 25px;
+}
+
+.decorated-zone__rec::after {
+  content:'';
+  display: block;
+  position: absolute;
+  inline-size: 9px;
+  block-size: 9px;
+  inset-inline-end: -19px;
+  inset-block-start: 8px;
+  border-radius: 50%;
+  border: 1px solid #FF0070;
+  background-color: #FF0070;
+  box-shadow: 0 0 6px 3px #FF0070;
+}
+
+@media(width <= 768px) {
+  .decorated-zone::after {
+    inset-inline-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+    inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  }
+  
+  .decorated-zone::before {
+    inset-inline-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+    inset-block-end: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  }
+
+  .decorated-zone__rec {
+    inset-inline-end: clamp(38px, 1.7786rem + 2.5445vw, 48px);
+    inset-block-start: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  }
+}
+
+.header__theme-menu {
+  align-self: start;
+  padding-inline-start: 20px;
+}
+
 .header__theme-menu-list {
-  display: grid;
-  grid-template: auto / repeat(3 , min-content);
+  display: flex;
   justify-content: center;
   gap: 10px;
   list-style: none;
 }
 
-.header__theme-menu-button {
-  padding-inline: 13px;
-  padding-block: 2px;
-  background-color: transparent;
-  text-align: center;
-  color: inherit;
-  border: 1px solid transparent;
-  text-transform: lowercase;
-  font-size: 18px;
-  font-family: "IBM Plex Mono";
-  font-weight: 400;
-  line-height: 18px;
+@media(width <= 768px){
+  .header__theme-menu {
+    padding-inline-start: 0;
+    justify-self: end;
+    align-self: center;
+  }
+
+  .header__theme-menu-list {
+   flex-direction: column;
+  }
 }
 
-.header__theme-menu-button_type_auto {
+.header__theme-menu-button {
+  padding-inline: 13px;
+  padding-block: 1px 5px;
+  background-color: transparent;
+  text-align: center;
+  text-transform: lowercase;
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--theme-text-color);
+  font-weight: inherit;
+  line-height: 18px;
+  border: 1px solid transparent;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid currentColor;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid currentColor;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
   border: 1px solid currentColor;
 }
 
 .header__title {
-color: #FFC2E6;
-text-shadow: 4px 4px 0px #FF0070;
-font-family: "IBM Plex Mono";
-font-style: normal;
-font-weight: 700;
+align-self: center;
+color: var(--main-title-text-color);
+text-shadow: 4px 4px 0px var(--main-title-text-shadow);
+font-family: inherit;
+font-weight: var(--accent-font-weight);
 line-height: 82.5%;
 font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
 }
 
-@media(width < 768px){
+@media(width <= 768px){
   .header__title
     {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    text-shadow: 4px 4px 0px  var(--alternative-title-text-shadow);
   }
 }
 
 .header__description {
-  inline-size: clamp(364px, -1.0625rem + 49.6094vw, 491px);
-  background-color: #FF8DCB;
-  align-self: start;
+  inline-size: clamp(min(100%, 364px), -1.0625rem + 49.6094vw, 491px);
+  align-self: center;
   justify-self: end;
 }
 
-@media(width < 768px){
-  .header__title
-    {
-      inline-size: min(100%, 364px);
+.title-decor {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--decor-title-text);
+  font-weight: var(--accent-font-weight);
+  line-height: 23.4px;
+  background-color: var(--accent-color);
+}
+
+.main {
+  padding-inline: 20px;
+}
+
+.section-block:not(:last-of-type) {
+  margin-block-end: 80px;
+}
+
+@media(width <= 768px){
+  .main {
+    padding-inline:  var(--main-padding-formule);
+  }
+  .section-block:not(:last-of-type) {
+    margin-block-end: clamp(50px, 1.3359rem + 7.6336vw, 80px); 
   }
 }
 
-.header__description__text {
-  color: #353430;
-  font-family: "IBM Plex Mono";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
+.book-arrangement {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.book-arrangement .section-block__title,  .book-arrangement .collection-cards{
+  flex-basis: 0;
+}
+
+.book-arrangement .section-block__title {
+  min-inline-size: 236px;
+}
+
+.book-arrangement .section-block__title {
+  flex-grow: 1;
+}
+
+.book-arrangement .collection-cards {
+  flex-grow: 2;
+}
+
+.section-block__title {
+  color: var(--theme-text-color);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: var(--accent-font-weight);
   line-height: 23.4px;
+}
+
+.book-arrangement .collection-cards__article:not(:last-of-type) {
+  margin-block-end: 20px;
+}
+
+.collection-cards__article__text {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 23.4px;
+  margin-block-start: 10px;
 }
