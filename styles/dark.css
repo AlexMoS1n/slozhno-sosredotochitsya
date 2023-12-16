@@ -3,6 +3,7 @@
   --main-font-size: 18px;
   --main-text-color: #F1B2CE;
   --main-font-weight: 400;
+  --main-line-height: 130%;
   --main-background-image: url("../images/cover-image-dark.png");
   --main-background-color: #000028;
   --main-title-text-color: #DB00FF;
@@ -22,6 +23,7 @@
     --main-font-size: 18px;
     --main-text-color: #FF0070;
     --main-font-weight: 400;
+    --main-line-height: 130%;
     --main-background-image: url("../images/cover-image-dark.png");
     --main-background-color: #000028;
     --main-title-text-color: #DB00FF;
