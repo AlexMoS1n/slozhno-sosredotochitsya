@@ -24,7 +24,7 @@
   padding: 20px;
 }
 
-@media (width <= 768px){
+@media (width <= 768px) {
   .header {
     padding: var(--main-padding-formule);
     margin-block-end: clamp(40px, 1.3073rem + 5.0891vw, 60px);
@@ -110,7 +110,7 @@
   list-style: none;
 }
 
-@media (width <= 768px){
+@media (width <= 768px) {
   .header__theme-menu {
     padding-inline-start: 0;
     justify-self: end;
@@ -167,9 +167,8 @@
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
 }
 
-@media (width <= 768px){
-  .main-decor-title
-    {
+@media (width <= 768px) {
+  .main-decor-title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
 
@@ -208,7 +207,7 @@
   margin-block-end: 80px;
 }
 
-@media (width <= 768px){
+@media (width <= 768px) {
   .main {
     padding-inline:  var(--main-padding-formule);
     margin-block-end: clamp(40px, 1.3073rem + 5.0891vw, 60px);
@@ -288,7 +287,7 @@
   grid-area: title;
 }
 
-@media (width < 385px){
+@media (width < 385px) {
   .news-paper-arrangement {
     grid-template-columns: 1fr;
   }
@@ -300,7 +299,7 @@
   gap: 20px;
 }
 
-@media (width <= 768px){
+@media (width <= 768px) {
   .news-paper-arrangement .collection-cards {
     display: grid;
   }
@@ -327,7 +326,7 @@
   margin-block-start: 20px;
 }
 
-@media (width <= 768px){
+@media (width <= 768px) {
   .block-gallery {
     margin-block-start: var(--main-padding-formule);
   }
@@ -378,7 +377,7 @@
   text-shadow: 2px 2px 0px var(--main-title-text-shadow);
 }
 
-@media (width <= 768px){
+@media (width <= 768px) {
   .footer__title {
     text-shadow: 2px 2px 0px  var(--alternative-title-text-shadow);
   }
