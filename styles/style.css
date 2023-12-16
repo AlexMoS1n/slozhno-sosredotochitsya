@@ -213,15 +213,15 @@
     margin-block-end: clamp(40px, 1.3073rem + 5.0891vw, 60px);
   }
 
-  .section-block:not(:last-of-type) {
-    margin-block-end: clamp(50px, 1.3359rem + 7.6336vw, 80px); 
-  }
-}
-
 .book-arrangement {
   display: flex;
   gap: 20px 18px;
   flex-wrap: wrap;
+}
+
+.section-block:not(:last-of-type) {
+  margin-block-end: clamp(50px, 1.3359rem + 7.6336vw, 80px); 
+}
 }
 
 .book-arrangement .section-block__title {
