@@ -18,10 +18,11 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root { 
+  :root 
+  { 
     --main-font-family: "IBM Plex Mono";
     --main-font-size: 18px;
-    --main-text-color: #FF0070;
+    --main-text-color: #F1B2CE;
     --main-font-weight: 400;
     --main-line-height: 130%;
     --main-background-image: url("../images/cover-image-dark.png");
