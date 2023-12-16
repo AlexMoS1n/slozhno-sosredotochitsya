@@ -18,6 +18,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  
   :root { 
     --main-font-family: "IBM Plex Mono";
     --main-font-size: 18px;
