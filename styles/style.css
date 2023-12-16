@@ -212,6 +212,7 @@
     padding-inline:  var(--main-padding-formule);
     margin-block-end: clamp(40px, 1.3073rem + 5.0891vw, 60px);
   }
+
   .section-block:not(:last-of-type) {
     margin-block-end: clamp(50px, 1.3359rem + 7.6336vw, 80px); 
   }
@@ -343,8 +344,7 @@
   .block-gallery {
     display: flex;
     flex-direction: column;
-    gap: 10px;   
-  }
+    gap: 10px; }
 }
 
 .sunset {
