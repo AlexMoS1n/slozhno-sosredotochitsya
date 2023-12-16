@@ -215,6 +215,7 @@
 
   .section-block:not(:last-of-type) {
     margin-block-end: clamp(50px, 1.3359rem + 7.6336vw, 80px); 
+    /*sfsdf*/
   }
 }
 
@@ -345,7 +346,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px; 
-    /*фывыфв*/
   }
 }
 
