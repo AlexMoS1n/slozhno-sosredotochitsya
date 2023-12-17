@@ -33,16 +33,12 @@
   }
 }
 
-.decorated-zone::before,
 .decorated-zone::after {
   content: "";
   display: block;
   position: absolute;
   inline-size: 25px;
   block-size: 25px;
-}
-
-.decorated-zone::after {
   border-block-start: 1px solid var(--theme-text-color);
   border-inline-end: 1px solid var(--theme-text-color);
   inset-inline-end: 20px;
@@ -50,6 +46,11 @@
 }
 
 .decorated-zone::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
   border-block-end: 1px solid var(--theme-text-color);
   border-inline-start: 1px solid var(--theme-text-color);
   inset-inline-start: 20px;
@@ -106,7 +107,7 @@
 .header__theme-menu-list {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: var(--gap-min-size);
   list-style: none;
 }
 
@@ -134,10 +135,12 @@
   font-weight: inherit;
   line-height: 18px;
   border: 1px solid transparent;
+  cursor: pointer;
+  transition: border 0.3s linear 0s; /* применил transition по Вашей рекомендации =) */
 }
 
 .header__theme-menu-button:hover {
-  border-block-end: 1px solid currentColor;
+  border: 1px solid var(--hover-button-border-color);
 }
 
 .header__theme-menu-button:focus {
@@ -145,12 +148,13 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
 }
 
 .header__theme-menu-button_active {
   pointer-events: none;
   border: 1px solid currentColor;
+  cursor: default;
 }
 
 .header__title {
@@ -220,16 +224,23 @@
 
 .book-arrangement {
   display: flex;
-  gap: 20px 18px;
+  gap: var(--gap-max-size);
   flex-wrap: wrap;
 }
 
 .book-arrangement .section-block__title {
-  flex: 1 0 0;
+  inline-size: max(236px, 32%)   /* Добавил максимально минимальную ширину в 236px на замечание о слишком узких колонках, но при этом, чтоб совпадало с макетом */ 
 }
 
 .book-arrangement .collection-cards {
-  flex: 2 0 0;
+  min-inline-size: 300px;
+  flex: 1 0 0;
+}
+
+@media (width < 768px)  {
+  .book-arrangement .section-block__title {
+    inline-size: 100%;
+  }
 }
 
 .section-block__title {
@@ -259,8 +270,8 @@
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
-  text-shadow: 2px 2px var(--main-title-text-shadow);
-  text-decoration: none;
+  text-shadow: 2px 2px var(--link-text-shadow-color);
+  text-decoration: none;    /* к ссылкам transition по не стал применять, т.к. в статье написано, что выделение ссылок пользователь хочет видеть мгновенно */
 }
 
 .collection-cards__article__text__link:hover {
@@ -278,7 +289,7 @@
 .news-paper-arrangement {
   display: grid;
   grid-template: auto auto / repeat(3, 1fr);
-  gap: 20px;
+  gap: var(--gap-max-size);
   grid-template-areas:
     "title . ."
     "content content content";
@@ -288,7 +299,7 @@
   grid-area: title;
 }
 
-@media (width < 385px) {
+@media (width < 768px) {
   .news-paper-arrangement {
     grid-template-columns: 1fr;
   }
@@ -297,10 +308,10 @@
 .news-paper-arrangement .collection-cards {
   grid-area: content;
   display: flex;
-  gap: 20px;
+  gap: var(--gap-max-size);
 }
 
-@media (width <= 768px) {
+@media (width < 1024px) {                    /* Изменил допустимую ширину на замечание о слишком узких колонках */ 
   .news-paper-arrangement .collection-cards {
     display: grid;
   }
@@ -323,7 +334,7 @@
 .block-gallery {
   display: grid;
   grid-template: repeat(3, auto) / repeat(3, 1fr);
-  gap: 20px;
+  gap: var(--gap-max-size);
   margin-block-start: 20px;
 }
 
@@ -344,7 +355,7 @@
   .block-gallery {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: var(--gap-min-size);
   }
 }
 

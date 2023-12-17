@@ -1,18 +1,14 @@
 .page.theme_light {
-  --main-font-family: "IBM Plex Mono";
-  --main-font-size: 18px;
   --main-text-color: #353430;
   --main-title-text-color: #FFC2E6;
   --main-title-text-shadow: #FF0070;
-  --main-font-weight: 400;
-  --main-line-height: 130%;
   --main-background-image: url("../images/cover-image-light.png");
   --main-background-color: #FFF1F7;
-  --main-padding-formule: clamp(10px, 0.0286rem + 2.5445vw, 20px);
+  --hover-button-border-color: rgba(50, 49, 45, 0.40);
   --alternative-title-text-shadow: #FF8DCB;
   --theme-text-color: var(--main-text-color);
   --decor-title-text: var(--main-text-color);
-  --accent-font-weight: 700;
+  --link-text-shadow-color: var(--alternative-title-text-shadow);
   --accent-color:#FF8DCB;
   --switch-rec: none;
 }
