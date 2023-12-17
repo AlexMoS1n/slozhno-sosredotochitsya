@@ -229,7 +229,10 @@
 }
 
 .book-arrangement .section-block__title {
-  inline-size: max(236px, 32%)   /* Добавил максимально минимальную ширину в 236px на замечание о слишком узких колонках, но при этом, чтоб совпадало с макетом */ 
+  inline-size: max(
+    236px,
+    32%
+  ); /* Добавил максимально минимальную ширину в 236px на замечание о слишком узких колонках, но при этом, чтоб совпадало с макетом */
 }
 
 .book-arrangement .collection-cards {
@@ -237,7 +240,7 @@
   flex: 1 0 0;
 }
 
-@media (width < 768px)  {
+@media (width < 768px) {
   .book-arrangement .section-block__title {
     inline-size: 100%;
   }
@@ -271,7 +274,7 @@
   font-weight: inherit;
   line-height: inherit;
   text-shadow: 2px 2px var(--link-text-shadow-color);
-  text-decoration: none;    /* к ссылкам transition по не стал применять, т.к. в статье написано, что выделение ссылок пользователь хочет видеть мгновенно */
+  text-decoration: none; /* к ссылкам transition по не стал применять, т.к. в статье написано, что выделение ссылок пользователь хочет видеть мгновенно */
 }
 
 .collection-cards__article__text__link:hover {
@@ -311,7 +314,8 @@
   gap: var(--gap-max-size);
 }
 
-@media (width < 1024px) {                    /* Изменил допустимую ширину на замечание о слишком узких колонках */ 
+@media (width < 1024px) {
+  /* Изменил допустимую ширину на замечание о слишком узких колонках */
   .news-paper-arrangement .collection-cards {
     display: grid;
   }
