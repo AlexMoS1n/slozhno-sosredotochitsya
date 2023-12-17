@@ -229,11 +229,7 @@
 }
 
 .book-arrangement .section-block__title {
-  inline-size: max(
-    236px,
-    /* Добавил максимально минимальную ширину в 236px на замечание о слишком узких колонках, но при этом, чтоб совпадало с макетом */
-      32%
-  );
+  inline-size: clamp(236px, -0.0625rem + 30.8594vw, 315px);
 }
 
 .book-arrangement .collection-cards {
