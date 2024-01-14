@@ -270,7 +270,7 @@
   font-weight: inherit;
   line-height: inherit;
   text-shadow: 2px 2px var(--link-text-shadow-color);
-  text-decoration: none; /* к ссылкам transition по не стал применять, т.к. в статье написано, что выделение ссылок пользователь хочет видеть мгновенно */
+  text-decoration: none;
 }
 
 .collection-cards__article__text__link:hover {
@@ -311,7 +311,6 @@
 }
 
 @media (width < 1024px) {
-  /* Изменил допустимую ширину на замечание о слишком узких колонках */
   .news-paper-arrangement .collection-cards {
     display: grid;
   }

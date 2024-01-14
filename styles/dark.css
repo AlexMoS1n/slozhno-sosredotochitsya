@@ -15,7 +15,6 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Дублируем переменные темной темы */
     --main-text-color: #F1B2CE;
     --main-title-text-color: #DB00FF;
     --main-title-text-shadow: #FF0070;
