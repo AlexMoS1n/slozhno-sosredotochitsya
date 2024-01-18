@@ -124,6 +124,7 @@
 }
 
 .header__theme-menu-button {
+  display: block;
   padding-inline: 13px;
   padding-block: 1px 5px;
   background-color: transparent;
